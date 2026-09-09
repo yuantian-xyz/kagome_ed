@@ -1,0 +1,17 @@
+# Smoke test: ~2 minutes on a laptop. Exactness checks against dense
+# diagonalisation, a free-fermion check, and one run through the production
+# code path (12-site cluster, hi filling, U=4).
+[model]
+beta = 3.0
+t = 1.0
+[grid]
+dtau = 0.05
+nmats = 20
+[lanczos]
+Mmax = 200
+tol = 1e-9
+[smoke]
+U = 3.0
+R = 2        # random vectors per sector in the 12-site run
+R_gc = 16    # random vectors per sector in the 6-site typicality-vs-exact check
+nq = 6       # forced q-batch size for the batching-consistency check

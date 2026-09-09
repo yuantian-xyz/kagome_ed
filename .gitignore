@@ -1,0 +1,7 @@
+julia/
+depot/
+_julia_tmp/
+*.zip
+output/
+state/
+.DS_Store

@@ -1,0 +1,23 @@
+# Timing + memory probe on the target machine (~10 min, single core by default).
+# Times H·v and the other kernels on the largest batch-1 sector pair (8,7)/(9,7)
+# of the 3×2 cluster, touches memtest_GB of RAM, and prints the batch-1 ETA model.
+[model]
+beta = 3.0
+t = 1.0
+[grid]
+dtau = 0.05
+nmats = 20
+[lanczos]
+Mmax = 200
+tol = 1e-9
+[estimate]
+L1 = 3
+L2 = 2
+nup = 8
+ndn = 7
+budget_GB = 200      # peak RAM the batch runs may use
+memtest_GB = 150     # first-touch allocation test (auto-reduced to free − 6 GB)
+M_assumed = 60       # Lanczos steps assumed in the ETA model (12-site smoke: 41–52 at U=3)
+R_hi = 4             # random vectors per sector (batch 1)
+n_kpoints = 2        # M and Γ
+U_list = [1.0, 2.0, 3.0]
